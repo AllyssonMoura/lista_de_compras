@@ -20,19 +20,22 @@ class MainScreen extends StatelessWidget {
             child: Image.asset("assets/images/icone.png"))
       ]),
       drawer: Menu(),
-      body: ListView.separated(
-          itemBuilder: builder,
-          separatorBuilder: (BuildContext context, int _) {
-            return Divider(
-                color: greenDivider, thickness: 1, indent: 50, endIndent: 50);
-          },
-          itemCount: _products.length),
+      body: Padding(
+        padding: const EdgeInsets.only(top: 8),
+        child: ListView.separated(
+            itemBuilder: builder,
+            separatorBuilder: (BuildContext context, int _) {
+              return Divider(
+                  color: greenDivider, thickness: 1, indent: 50, endIndent: 50);
+            },
+            itemCount: _products.length),
+      ),
     );
   }
 
   Widget builder(BuildContext context, int index) {
     return ListTile(
-      leading: Icon(Icons.shopping_cart_outlined, size: 50),
+      leading: Image.asset("assets/images/grocery.png"),
       title: Column(
         children: [
           Row(
